@@ -1,0 +1,165 @@
+{
+    "Title": "My Childhood Home",
+    "Credits": "Created by Adam Smith (amsmith@ucsc.edu). Edited by Trinity Willis",
+    "InitialLocation": "Back door",
+    "Locations": {
+        "Back door": {
+            "Body": "It's a plain white door. I haven't been here in years.",
+            "Choices": [
+                {
+                    "Text": "Enter",
+                    "Target": "Laundry Room"
+                },
+                {
+                    "Text": "Leave",
+                    "Target": "Leave1"
+                }
+            ]
+        },
+        "Leave1": {
+            "Body": "I never got to say goodbye"
+        },
+        "Laundry Room": {
+            "Body": "Simple, neat, functional. Litter boxes sit to the left. I wonder where the cats are. A shoe rack is in front. Please take off your shoes.",
+            "Choices": [
+                {
+                    "Text": "Continue",
+                    "Target": "Kitchen"
+                }
+            ]
+        },
+        "Kitchen": {
+            "Body": "It's a large kitchen with an island in the middle. The walls are painted a mix of oranges and yellows. A few strands of spaghetti stick to the roof above the stove.",
+            "Choices": [
+                {
+                    "Text": "Study",
+                    "Target": "Study"
+                },
+                {
+                    "Text": "Living Room",
+                    "Target": "Living Room"
+                }
+            ]
+        },
+        "Study": {
+            "Body": "A large white desk holds the remnants of various projects. Bookshelves line the walls filled to the brim with art supplies.",
+            "Choices": [
+                {
+                    "Text": "Kitchen",
+                    "Target": "Kitchen"
+                },
+                {
+                    "Text": "Living Room",
+                    "Target": "Living Room"
+                }
+            ]
+        },
+        "Living Room": {
+            "Body": "A line of bookshelves sit behind two plush sofas with swiring patterns. A fat black cat naps in a cat tree by the front door.",
+            "Choices": [
+                {
+                    "Text": "Study",
+                    "Target": "Study"
+                },
+                {
+                    "Text": "Back Door",
+                    "Target": "Back Door"
+                },
+                {
+                    "Text": "Hallway",
+                    "Target": "Hallway"
+                }
+            ]
+        },
+        "Hallway": {
+            "Body": "Pictures line the walls. A collage of 12 school pictures, some family pictures, a few kid's paintings.",
+            "Choices": [
+                {
+                    "Text": "Trinity's Room",
+                    "Target": "Trinity's Room"
+                },
+                {
+                    "Text": "Guest Bathroom",
+                    "Target": "Guest Bathroom"
+                },
+                {
+                    "Text": "Guest Bedroom",
+                    "Target": "Guest Bedroom"
+                },
+                {
+                    "Text": "Mom's Room",
+                    "Target": "Mom's Room"
+                },
+                {
+                    "Text": "Living Room",
+                    "Target": "Living Room"
+                }
+            ]
+        },
+        "Back Door": {
+            "Body": "The back door leads out onto a covered patio. Dry, rocky soil marks an empty path down the side of the house, broken up only by a large lemon tree.",
+            "Choices": [
+                {
+                    "Text": "Back inside",
+                    "Target": "Living Room"
+                },
+                {
+                    "Text": "Leave",
+                    "Target": "Leave"
+                }
+            ]
+        },
+        "Guest Bathroom": {
+            "Body": "It's a simple bathroom. Clean, white, well maintained.",
+            "Choices": [
+                {
+                    "Text": "Hallway",
+                    "Target": "Hallway"
+                }
+            ]
+        },
+        "Guest Bedroom": {
+            "Body": "This was my room once. It's the cat room now. A gray cat looks out the window from atop a wooden table. A cat tree sits next to some spare food and litter.",
+            "Choices": [
+                {
+                    "Text": "Hallway",
+                    "Target": "Hallway"
+                }
+            ]
+        },
+        "Trinity's Room": {
+            "Body": "It's a cluttered, lived in space. Some well-loved stuffed animals sit atop a loft bed. The desk underneath is covered in papers and books. Bookshelves are stocked with knick knacks. This was my home.",
+            "Choices": [
+                {
+                    "Text": "Hallway",
+                    "Target": "Hallway"
+                }
+            ]
+        },
+        "Mom's Room": {
+            "Body": "Mom preferred the guest bedroom. This room was too big, too open. Her hand painted dresser sits againts the wall. Two walk in closets frame the door to the bathroom.",
+            "Choices": [
+                {
+                    "Text": "Bathroom",
+                    "Target": "Bathroom"
+                },
+                {
+                    "Text": "Hallway",
+                    "Target": "Hallway"
+                }
+            ]
+        },
+        "Bathroom": {
+            "Body": "We shared this bathroom. Two sinks sit on either side of a large bathtub in the corner. The shower is around the corner, metal rims turning white from constant exposure to water.",
+            "Choices": [
+                {
+                    "Text": "Mom's Room",
+                    "Target": "Mom's Room"
+                }
+            ]
+        },
+        "Leave": {
+            "Body": "It's nice to be back"
+        }
+    }
+}
