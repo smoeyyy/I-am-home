@@ -35,6 +35,28 @@ class Location extends Scene {
     }
 }
 
+class InteractiveObject extends Location {
+    interacted = false;
+
+    create(key) {
+        console.log("InteractiveObject.create key", key);
+        let InteractiveObjectData = this.engine.storyData.Locations[key].InteractiveObject;
+        this.engine.show(InteractiveObjectData.Body);
+        
+        if(InteractiveObjectData.Choices) {
+            for(let choice of InteractiveObjectData.Choice) {
+                this.engine.addChoice(InteractiveObjectData.Text, choice);
+            }
+        }
+    }
+
+    handleChoice(choice) {
+        this.engine.show("&gt; "+choice.Text);
+        this.engine.gotoScene(InteractiveObject, choice.Target);
+        interacted = true;
+    }
+}
+
 class End extends Scene {
     create() {
         this.engine.show("<hr>");

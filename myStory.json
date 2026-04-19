@@ -1,10 +1,11 @@
 {
-    "Title": "My Childhood Home",
+    "Title": "Am I Home?",
     "Credits": "Created by Adam Smith (amsmith@ucsc.edu). Edited by Trinity Willis",
     "InitialLocation": "Back door",
+
     "Locations": {
         "Back door": {
-            "Body": "It's a plain white door. I haven't been here in years.",
+            "Body": "You face a plain, white door. It's unassuming, familiar but unknown. Are there some new scratches in the wood? You haven't been here in years so it's hard to tell.",
             "Choices": [
                 {
                     "Text": "Enter",
@@ -20,7 +21,7 @@
             "Body": "I never got to say goodbye"
         },
         "Laundry Room": {
-            "Body": "Simple, neat, functional. Litter boxes sit to the left. I wonder where the cats are. A shoe rack is in front. Please take off your shoes.",
+            "Body": "A laundry room. Simple, neat, functional. Two litter boxes sit to the left and you wonder where the cats might be. You take off your shoes and set them on the shoe rack in smooth, practiced motions.",
             "Choices": [
                 {
                     "Text": "Continue",
@@ -29,11 +30,11 @@
             ]
         },
         "Kitchen": {
-            "Body": "It's a large kitchen with an island in the middle. The walls are painted a mix of oranges and yellows. A few strands of spaghetti stick to the roof above the stove.",
+            "Body": "It's a large kitchen with an island in the middle. The walls are hand painted a mix of oranges and yellows with sunflowers dancing along near the ceiling. A few strands of pasta stick to the roof above the stove from spaghetti dinners long past.",
             "Choices": [
                 {
-                    "Text": "Study",
-                    "Target": "Study"
+                    "Text": "Office",
+                    "Target": "Office"
                 },
                 {
                     "Text": "Living Room",
@@ -41,8 +42,8 @@
                 }
             ]
         },
-        "Study": {
-            "Body": "A large white desk holds the remnants of various projects. Bookshelves line the walls filled to the brim with art supplies.",
+        "Office": {
+            "Body": "You walk through a large arch into the office. A white desk against a line of windows holds the remnants of various projects and papers. Bookshelves line the walls filled to the brim with art supplies.",
             "Choices": [
                 {
                     "Text": "Kitchen",
@@ -55,11 +56,11 @@
             ]
         },
         "Living Room": {
-            "Body": "A line of bookshelves sit behind two plush sofas with swiring patterns. A fat black cat naps in a cat tree by the front door.",
+            "Body": "A line of bookshelves piled with books and CDs sit behind two plush sofas with swiring threaded patterns.",
             "Choices": [
                 {
-                    "Text": "Study",
-                    "Target": "Study"
+                    "Text": "Office",
+                    "Target": "Office"
                 },
                 {
                     "Text": "Back Door",
@@ -68,11 +69,22 @@
                 {
                     "Text": "Hallway",
                     "Target": "Hallway"
+                },
+                {
+                    "Text": "Approach the cat"
                 }
-            ]
+            ],
+            "InteractiveObject": [
+                {
+                    "Body": "A fat black cat naps in a cat tree by the front door. She looks up when you enter and purrs anticipatedly.",
+                    "Text": "Hallway",
+                    "Choice": "Pet the cat"
+                }
+            ]    
+            }
         },
         "Hallway": {
-            "Body": "Pictures line the walls. A collage of 12 school pictures, some family pictures, a few kid's paintings.",
+            "Body": "Pictures line the walls. A collage of 12 school pictures, some family pictures, a few kid's paintings. You remember sprinting down this hall many times.",
             "Choices": [
                 {
                     "Text": "Trinity's Room",
