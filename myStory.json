@@ -74,7 +74,7 @@
                 "Body": "She looks up when you approach and purrs anticipatedly.",
                 "Choices": [
                     {
-                        "Text": "Pet the cat",
+                        "Text": "Pet Polly",
                         "Target": "Living Room",
                         "Result": "The cat purrs and leans into your hand. Her tail flicks contentedly. You remember how you found her in the backyard sleeping in the dry grass under the lemon tree. You remember how skinny she was back then, how you left food and blankets out for her. You remember the first time she came inside and was so tired she slept for days. You named her Polly. When she rolls over onto her back and looks up at you you can see the trust in her eyes.",
                         "SetFlag": "pollyPetted"
@@ -151,7 +151,7 @@
                 "Body": "The cat turns his head when you approach. When he notices you he jumps to his feet and starts meowing, coming to circle around your feet and rub against your legs.",
                 "Choices": [
                     {
-                        "Text": "Pet the cat",
+                        "Text": "Pet Colonel",
                         "Target": "Guest Bedroom",
                         "Result": "You remember when you picked him out from his litter at the shelter. He was only a few months old, tiny, and fluffier than his siblings. He was named Colonel after Colonel Mustard from the board game Clue. He had always been your cat, sleeping by your feet at night and sitting on your windowsill while you studied at your desk. He recognizes you when you visit, no matter how long it's been.",
                         "SetFlag": "colonelPetted"
