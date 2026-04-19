@@ -18,9 +18,18 @@ class Engine {
         ).then(
             (json) => {
                 this.storyData = json;
+                this.flags = {};
                 this.gotoScene(firstSceneClass)
             }
         );
+    }
+
+    setFlag(name, value = true) {
+        this.flags[name] = value;
+    }
+
+    getFlag(name) {
+        return this.flags[name];
     }
 
     gotoScene(sceneClass, data) {

@@ -18,7 +18,16 @@ class Location extends Scene {
         
         if(locationData.Choices) {
             for(let choice of locationData.Choices) {
-                this.engine.addChoice(choice.Text, choice);
+                let showChoice = true;
+                if(choice.Scene === "InteractiveObject") {
+                    let interactiveData = locationData.InteractiveObject;
+                    if(interactiveData && interactiveData.Flag && this.engine.getFlag(interactiveData.Flag)) {
+                        showChoice = false;
+                    }
+                }
+                if(showChoice) {
+                    this.engine.addChoice(choice.Text, choice);
+                }
             }
         } else {
             this.engine.addChoice("The end.")
@@ -28,32 +37,51 @@ class Location extends Scene {
     handleChoice(choice) {
         if(choice) {
             this.engine.show("&gt; "+choice.Text);
-            this.engine.gotoScene(Location, choice.Target);
+            if(choice.Text === "Leave") {
+                if(this.engine.getFlag("pollyPetted") && this.engine.getFlag("colonelPetted")) {
+                    this.engine.gotoScene(Location, choice.Target);
+                } else {
+                    this.engine.show("You can't leave yet. You haven't said goodbye to the cats.");
+                    this.engine.gotoScene(Location, "Living Room");
+                }
+            } else if(choice.Scene === "InteractiveObject") {
+                this.engine.gotoScene(InteractiveObject, choice.Target);
+            } else {
+                this.engine.gotoScene(Location, choice.Target);
+            }
         } else {
             this.engine.gotoScene(End);
         }
     }
 }
 
-class InteractiveObject extends Location {
-    interacted = false;
-
+class InteractiveObject extends Scene {
     create(key) {
         console.log("InteractiveObject.create key", key);
-        let InteractiveObjectData = this.engine.storyData.Locations[key].InteractiveObject;
-        this.engine.show(InteractiveObjectData.Body);
+        let interactiveData = this.engine.storyData.Locations[key].InteractiveObject;
+        this.engine.show(interactiveData.Body);
         
-        if(InteractiveObjectData.Choices) {
-            for(let choice of InteractiveObjectData.Choice) {
-                this.engine.addChoice(InteractiveObjectData.Text, choice);
+        if(interactiveData.Choices) {
+            for(let choice of interactiveData.Choices) {
+                this.engine.addChoice(choice.Text, choice);
             }
+        } else {
+            this.engine.addChoice("Step back", { Text: "Step back", Target: key });
         }
     }
 
     handleChoice(choice) {
-        this.engine.show("&gt; "+choice.Text);
-        this.engine.gotoScene(InteractiveObject, choice.Target);
-        interacted = true;
+        if(choice.SetFlag) {
+            this.engine.setFlag(choice.SetFlag);
+        }
+        if(choice.Result) {
+            this.engine.show(choice.Result);
+        }
+        if(choice.Target) {
+            this.engine.gotoScene(Location, choice.Target);
+        } else {
+            this.engine.gotoScene(Location, this.engine.storyData.InitialLocation);
+        }
     }
 }
 

@@ -10,15 +10,8 @@
                 {
                     "Text": "Enter",
                     "Target": "Laundry Room"
-                },
-                {
-                    "Text": "Leave",
-                    "Target": "Leave1"
                 }
             ]
-        },
-        "Leave1": {
-            "Body": "I never got to say goodbye"
         },
         "Laundry Room": {
             "Body": "A laundry room. Simple, neat, functional. Two litter boxes sit to the left and you wonder where the cats might be. You take off your shoes and set them on the shoe rack in smooth, practiced motions.",
@@ -56,7 +49,7 @@
             ]
         },
         "Living Room": {
-            "Body": "A line of bookshelves piled with books and CDs sit behind two plush sofas with swiring threaded patterns.",
+            "Body": "In the living room a line of bookshelves piled with books and CDs sit behind two plush sofas with swiring threaded patterns. A fat black cat naps in a cat tree by the front door.",
             "Choices": [
                 {
                     "Text": "Office",
@@ -71,24 +64,34 @@
                     "Target": "Hallway"
                 },
                 {
-                    "Text": "Approach the cat"
+                    "Text": "Approach the cat",
+                    "Target": "Living Room",
+                    "Scene": "InteractiveObject"
                 }
             ],
-            "InteractiveObject": [
-                {
-                    "Body": "A fat black cat naps in a cat tree by the front door. She looks up when you enter and purrs anticipatedly.",
-                    "Text": "Hallway",
-                    "Choice": "Pet the cat"
-                }
-            ]    
+            "InteractiveObject": {
+                "Flag": "pollyPetted",
+                "Body": "She looks up when you approach and purrs anticipatedly.",
+                "Choices": [
+                    {
+                        "Text": "Pet the cat",
+                        "Target": "Living Room",
+                        "Result": "The cat purrs and leans into your hand. Her tail flicks contentedly. You remember how you found her in the backyard sleeping in the dry grass under the lemon tree. You remember how skinny she was back then, how you left food and blankets out for her. You remember the first time she came inside and was so tired she slept for days. You named her Polly. When she rolls over onto her back and looks up at you you can see the trust in her eyes.",
+                        "SetFlag": "pollyPetted"
+                    },
+                    {
+                        "Text": "Step back",
+                        "Target": "Living Room"
+                    }
+                ]
             }
         },
         "Hallway": {
-            "Body": "Pictures line the walls. A collage of 12 school pictures, some family pictures, a few kid's paintings. You remember sprinting down this hall many times.",
+            "Body": "Pictures line the hallway walls. A collage of 12 school pictures, some family pictures, a few kid's paintings. You remember sprinting down this hall many times.",
             "Choices": [
                 {
-                    "Text": "Trinity's Room",
-                    "Target": "Trinity's Room"
+                    "Text": "Your Room",
+                    "Target": "Your Room"
                 },
                 {
                     "Text": "Guest Bathroom",
@@ -131,16 +134,37 @@
             ]
         },
         "Guest Bedroom": {
-            "Body": "This was my room once. It's the cat room now. A gray cat looks out the window from atop a wooden table. A cat tree sits next to some spare food and litter.",
+            "Body": "This was your room once. It's the cat room now. A cat tree sits next to some spare food and litter. A gray cat sits on the windowsill and watches hummingbirds on a feeder outside.",
             "Choices": [
                 {
                     "Text": "Hallway",
                     "Target": "Hallway"
+                },
+                {
+                    "Text": "Approach the cat",
+                    "Target": "Guest Bedroom",
+                    "Scene": "InteractiveObject"
                 }
-            ]
+            ],
+            "InteractiveObject": {
+                "Flag": "colonelPetted",
+                "Body": "The cat turns his head when you approach. When he notices you he jumps to his feet and starts meowing, coming to circle around your feet and rub against your legs.",
+                "Choices": [
+                    {
+                        "Text": "Pet the cat",
+                        "Target": "Guest Bedroom",
+                        "Result": "You remember when you picked him out from his litter at the shelter. He was only a few months old, tiny, and fluffier than his siblings. He was named Colonel after Colonel Mustard from the board game Clue. He had always been your cat, sleeping by your feet at night and sitting on your windowsill while you studied at your desk. He recognizes you when you visit, no matter how long it's been.",
+                        "SetFlag": "colonelPetted"
+                    },
+                    {
+                        "Text": "Step back",
+                        "Target": "Guest Bedroom"
+                    }
+                ]
+            }
         },
-        "Trinity's Room": {
-            "Body": "It's a cluttered, lived in space. Some well-loved stuffed animals sit atop a loft bed. The desk underneath is covered in papers and books. Bookshelves are stocked with knick knacks. This was my home.",
+        "Your Room": {
+            "Body": "It's a cluttered, lived in space. Some well-loved stuffed animals sit atop a loft bed. The desk underneath is covered in papers and books. Bookshelves are stocked with knick knacks. It's exactly how you remember it.",
             "Choices": [
                 {
                     "Text": "Hallway",
